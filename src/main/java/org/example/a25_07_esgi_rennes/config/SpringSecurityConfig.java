@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -18,12 +19,15 @@ public class SpringSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         // @formatter:off
         http.authorizeHttpRequests((authorize) -> authorize
+                        .requestMatchers("/tchat/allMessages")  .authenticated()
+                        .requestMatchers("/tchat/saveMessage")  .hasRole("ADMIN")
                         .requestMatchers("/testPrivate")  .authenticated()
                         .requestMatchers("/testPrivateAdmin").hasRole("ADMIN")
                         .anyRequest().permitAll()
                 )
                 .httpBasic(withDefaults())
-                .formLogin(withDefaults());
+                .formLogin(withDefaults())
+                .csrf(AbstractHttpConfigurer::disable);
         // @formatter:on
         return http.build();
     }

@@ -20,6 +20,10 @@ public class MessageService {
         messageRepository.save(message);
     }
 
+    public MessageBean findById(Long id) {
+        return messageRepository.findById(id).orElse(null);
+    }
+
     public List<MessageBean> getAllMessages() {
         return messageRepository.findAll();
     }
