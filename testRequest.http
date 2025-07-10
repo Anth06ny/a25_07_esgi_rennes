@@ -1,7 +1,93 @@
-POST http://localhost:8080/receiveStudent
+###
+POST http://localhost:8080/tchat/saveMessage
 Content-Type: application/json
 
 {
-  "name": "toto",
-  "note": 10
+  "pseudo": "Toto",
+  "message": "coucou"
 }
+
+###
+POST http://localhost:8080/tchat/saveMessage
+Content-Type: application/json
+
+{
+  "pseudo": "Bob",
+  "message": "hello"
+}
+
+###
+POST http://localhost:8080/tchat/saveMessage
+Content-Type: application/json
+
+{
+  "pseudo": "Toto",
+  "message": "coucou"
+}
+
+###
+POST http://localhost:8080/tchat/saveMessage
+Content-Type: application/json
+
+{
+  "pseudo": "Bob",
+  "message": "hello"
+}
+
+###
+POST http://localhost:8080/tchat/saveMessage
+Content-Type: application/json
+
+{
+  "pseudo": "Toto",
+  "message": "coucou"
+}
+
+###
+POST http://localhost:8080/tchat/saveMessage
+Content-Type: application/json
+
+{
+  "pseudo": "Bob",
+  "message": "hello"
+}
+
+###
+POST http://localhost:8080/tchat/saveMessage
+Content-Type: application/json
+
+{
+  "pseudo": "Toto",
+  "message": "coucou"
+}
+
+###
+POST http://localhost:8080/tchat/saveMessage
+Content-Type: application/json
+
+{
+  "pseudo": "Bob",
+  "message": "hello"
+}
+
+###
+POST http://localhost:8080/tchat/saveMessage
+Content-Type: application/json
+
+{
+  "pseudo": "Toto",
+  "message": "coucou"
+}
+
+###
+POST http://localhost:8080/tchat/saveMessage
+Content-Type: application/json
+
+{
+  "pseudo": "Bob",
+  "message": "hello"
+}
+
+###
+GET http://localhost:8080/tchat/allMessages
+

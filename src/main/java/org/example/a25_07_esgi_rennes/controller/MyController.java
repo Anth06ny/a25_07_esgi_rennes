@@ -11,9 +11,12 @@ import java.util.ArrayList;
 @Controller
 public class MyController {
 
+
+
+
     //http://localhost:8080/hello
     @GetMapping("/hello")
-    public String testHello(Model model, HttpSession session){
+    public String testHello(Model model, HttpSession session) {
         System.out.println("/hello");
 
         ArrayList<StudentBean> liststudent = new ArrayList<>();

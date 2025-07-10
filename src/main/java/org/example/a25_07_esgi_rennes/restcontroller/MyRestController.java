@@ -9,6 +9,27 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MyRestController {
 
+    //http://localhost:8080/testPublic
+    @GetMapping("/testPublic")
+    public String testPublic() {
+        System.out.println("/testPublic");
+        return "Hello public";
+    }
+
+    //http://localhost:8080/testPrivate
+    @GetMapping("/testPrivate")
+    public String testPrivate() {
+        System.out.println("/testPrivate");
+        return "Hello private";
+    }
+
+    //http://localhost:8080/testPrivateAdmin
+    @GetMapping("/testPrivateAdmin")
+    public String testPrivateAdmin() {
+        System.out.println("/testPrivateAdmin");
+        return "Hello private Admin";
+    }
+
     //http://localhost:8080/receiveStudent
 //Json Attendu : {"name": "toto", "note": 12}
     @PostMapping("/receiveStudent")
